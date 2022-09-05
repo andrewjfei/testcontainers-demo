@@ -37,6 +37,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!--  Apache Collection Utils  -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.4</version>
+		</dependency>
+
 		<!--  JUnit & Mockito  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
