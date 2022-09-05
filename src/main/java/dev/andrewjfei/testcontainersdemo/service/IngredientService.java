@@ -21,7 +21,8 @@ public class IngredientService {
 
     public Ingredient createNewIngredient(Ingredient ingredient) {
         logger.info("Creating new ingredient...");
-        Ingredient newIngredient = new Ingredient(ingredient.getName());
+        Ingredient newIngredient = new Ingredient();
+        newIngredient.setName(ingredient.getName());
         return ingredientRepository.save(newIngredient);
     }
 
@@ -32,7 +33,7 @@ public class IngredientService {
         return IterableUtils.toList(ingredientIterable);
     }
 
-    public Ingredient retrieveIngredientById(int id) {
+    public Ingredient retrieveIngredientById(Long id) {
         logger.info("Retrieving ingredient...");
         Optional<Ingredient> optionalIngredient = ingredientRepository.findById(id);
 

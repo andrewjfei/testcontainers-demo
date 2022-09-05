@@ -40,7 +40,7 @@ public class IngredientController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Ingredient> fetchIngredientById(@PathVariable int id) {
+    public ResponseEntity<Ingredient> fetchIngredientById(@PathVariable Long id) {
         logger.info("Calling ingredient service to retrieve ingredient by id.");
         Ingredient ingredient = ingredientService.retrieveIngredientById(id);
         return new ResponseEntity<>(ingredient, HttpStatus.OK);

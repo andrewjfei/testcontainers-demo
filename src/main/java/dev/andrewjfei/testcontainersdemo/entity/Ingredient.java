@@ -5,14 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity( name = "ingredient")
+@Entity
+@Table(name = "ingredient")
 public class Ingredient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name="id")
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -22,15 +24,11 @@ public class Ingredient {
 
     }
 
-    public Ingredient(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
