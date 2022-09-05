@@ -14,14 +14,14 @@ import java.util.Optional;
 @Service
 public class IngredientService {
 
-    private Logger logger = LoggerFactory.getLogger(IngredientService.class);
-
     @Autowired
     private IngredientRepository ingredientRepository;
 
-    public Ingredient createNewIngredient(String name) {
+    private Logger logger = LoggerFactory.getLogger(IngredientService.class);
+
+    public Ingredient createNewIngredient(Ingredient ingredient) {
         logger.info("Creating new ingredient...");
-        Ingredient newIngredient = new Ingredient(name);
+        Ingredient newIngredient = new Ingredient(ingredient.getName());
         return ingredientRepository.save(newIngredient);
     }
 
